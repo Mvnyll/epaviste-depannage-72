@@ -1,0 +1,73 @@
+const mapSearchUrl = (city, postalCode) => {
+  const params = new URLSearchParams({ query: `${city} ${postalCode}` });
+  return `https://www.google.com/maps/search/?api=1&${params.toString()}`;
+};
+
+const area = (id, city, postalCode, department, departmentName) => ({
+  id,
+  city,
+  postalCode,
+  department,
+  departmentName,
+  mapsUrl: mapSearchUrl(city, postalCode),
+});
+
+export const serviceAreas = [
+  area("le-mans", "Le Mans", "72000", "72", "Sarthe"),
+  area("allonnes", "Allonnes", "72700", "72", "Sarthe"),
+  area("coulaines", "Coulaines", "72190", "72", "Sarthe"),
+  area("arnage", "Arnage", "72230", "72", "Sarthe"),
+  area("la-fleche", "La Flèche", "72200", "72", "Sarthe"),
+  area("sable-sur-sarthe", "Sablé-sur-Sarthe", "72300", "72", "Sarthe"),
+  area("la-ferte-bernard", "La Ferté-Bernard", "72400", "72", "Sarthe"),
+  area("mamers", "Mamers", "72600", "72", "Sarthe"),
+  area("montval-sur-loir", "Montval-sur-Loir (Château-du-Loir)", "72500", "72", "Sarthe"),
+  area("parigne-leveque", "Parigné-l’Évêque", "72250", "72", "Sarthe"),
+  area("bonnetable", "Bonnétable", "72110", "72", "Sarthe"),
+  area("conlie", "Conlie", "72240", "72", "Sarthe"),
+  area("ecommoy", "Écommoy", "72220", "72", "Sarthe"),
+  area("change-sarthe", "Changé", "72560", "72", "Sarthe"),
+  area("yvre-leveque", "Yvré-l’Évêque", "72530", "72", "Sarthe"),
+  area("mulsanne", "Mulsanne", "72230", "72", "Sarthe"),
+  area("sille-le-guillaume", "Sillé-le-Guillaume", "72140", "72", "Sarthe"),
+  area("la-suze-sur-sarthe", "La Suze-sur-Sarthe", "72210", "72", "Sarthe"),
+  area("fresnay-sur-sarthe", "Fresnay-sur-Sarthe", "72130", "72", "Sarthe"),
+  area("arconnay", "Arçonnay", "72610", "72", "Sarthe"),
+  area("saint-calais", "Saint-Calais", "72120", "72", "Sarthe"),
+  area("laval", "Laval", "53000", "53", "Mayenne"),
+  area("mayenne", "Mayenne", "53100", "53", "Mayenne"),
+  area("chateau-gontier", "Château-Gontier-sur-Mayenne", "53200", "53", "Mayenne"),
+  area("evron", "Évron", "53600", "53", "Mayenne"),
+  area("ernee", "Ernée", "53500", "53", "Mayenne"),
+  area("craon", "Craon", "53400", "53", "Mayenne"),
+  area("saint-berthevin", "Saint-Berthevin", "53940", "53", "Mayenne"),
+  area("bonchamp-les-laval", "Bonchamp-lès-Laval", "53960", "53", "Mayenne"),
+  area("change-mayenne", "Changé", "53810", "53", "Mayenne"),
+  area("lhuisserie", "L’Huisserie", "53970", "53", "Mayenne"),
+  area("gorron", "Gorron", "53120", "53", "Mayenne"),
+  area("meslay-du-maine", "Meslay-du-Maine", "53170", "53", "Mayenne"),
+  area("villaines-la-juhel", "Villaines-la-Juhel", "53700", "53", "Mayenne"),
+  area("cosse-le-vivien", "Cossé-le-Vivien", "53230", "53", "Mayenne"),
+  area("andouille", "Andouillé", "53240", "53", "Mayenne"),
+  area("pre-en-pail-saint-samson", "Pré-en-Pail-Saint-Samson", "53140", "53", "Mayenne"),
+  area("renaze", "Renazé", "53800", "53", "Mayenne"),
+  area("port-brillet", "Port-Brillet", "53410", "53", "Mayenne"),
+  area("ambrieres-les-vallees", "Ambrières-les-Vallées", "53300", "53", "Mayenne"),
+  area("louverne", "Louverné", "53950", "53", "Mayenne"),
+  area("blois", "Blois", "41000", "41", "Loir-et-Cher"),
+  area("vineuil", "Vineuil", "41350", "41", "Loir-et-Cher"),
+  area("la-chaussee-saint-victor", "La Chaussée-Saint-Victor", "41260", "41", "Loir-et-Cher"),
+  area("mer", "Mer", "41500", "41", "Loir-et-Cher"),
+  area("contres", "Contres (Le Controis-en-Sologne)", "41700", "41", "Loir-et-Cher"),
+  area("vendome", "Vendôme", "41100", "41", "Loir-et-Cher"),
+  area("romorantin-lanthenay", "Romorantin-Lanthenay", "41200", "41", "Loir-et-Cher"),
+  area("montrichard-val-de-cher", "Montrichard Val de Cher", "41400", "41", "Loir-et-Cher"),
+  area("alencon", "Alençon", "61000", "61", "Orne"),
+  area("damigny", "Damigny", "61250", "61", "Orne"),
+  area("saint-germain-du-corbeis", "Saint-Germain-du-Corbéis", "61000", "61", "Orne"),
+  area("sees", "Sées", "61500", "61", "Orne"),
+  area("argentan", "Argentan", "61200", "61", "Orne"),
+];
+
+// Only confirmed physical locations belong here. The 54 service areas are not agencies.
+export const centers = [];
