@@ -6,6 +6,8 @@
 .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; position: relative; border: 1px solid rgba(0, 168, 255, 0.7); transform: skew(-8deg); font-family: var(--display); font-size: 19px; font-weight: 900; }
 .brand-mark span { transform: skew(8deg); }
 .brand-mark i { position: absolute; width: 15px; height: 2px; right: -7px; bottom: 5px; background: var(--blue); }
+.brand-logo { display: flex; align-items: center; }
+.brand-logo img { height: 42px; width: auto; }
 .brand-name { display: grid; gap: 4px; }
 .brand-name strong { font-size: 13px; letter-spacing: 0.01em; }
 .brand-name small { color: var(--muted); font-size: 8px; letter-spacing: 0.12em; }
