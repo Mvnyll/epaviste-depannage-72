@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 import { centers, serviceAreas } from "../src/js/data/centers.js";
@@ -15,6 +15,12 @@ assert.ok(serviceAreas.every((area) => /^\d{5}$/.test(area.postalCode)), "Postal
 assert.equal(new Set(serviceAreas.map((area) => area.id)).size, serviceAreas.length, "Area ids must be unique.");
 assert.ok(serviceAreas.every((area) => area.mapsUrl.startsWith("https://www.google.com/maps/")));
 assert.equal(centers.length, 0, "No physical center may be added without confirmed details.");
+
+const gallerySource = readFileSync("src/js/data/gallery.js", "utf8");
+const galleryImages = [...new Set(gallerySource.match(/parc-vehicules-\d{2}\.jpeg/g) || [])].sort();
+assert.deepEqual(galleryImages, Array.from({ length: 6 }, (_, index) => `parc-vehicules-${String(index + 1).padStart(2, "0")}.jpeg`));
+assert.ok(galleryImages.every((image) => existsSync(`public/assets/images/${image}`)), "Every gallery image must exist in public assets.");
+assert.ok(existsSync("public/assets/images/logo-epaviste.png"), "The displayed logo must exist in public assets.");
 
 assert.deepEqual(searchServiceAreas("72000").map((area) => area.city), ["Le Mans"]);
 assert.deepEqual(searchServiceAreas("laval").map((area) => area.city), ["Laval", "Bonchamp-lès-Laval"]);
@@ -59,6 +65,15 @@ const hostingHeaders = JSON.parse(readFileSync("firebase.json", "utf8")).hosting
 const contentSecurityPolicy = hostingHeaders.flatMap((entry) => entry.headers).find((header) => header.key === "Content-Security-Policy")?.value;
 assert.ok(contentSecurityPolicy?.includes("script-src 'self'"), "Hosting CSP must only allow same-origin scripts.");
 assert.ok(contentSecurityPolicy?.includes("object-src 'none'"), "Hosting CSP must disable plugin content.");
-assert.ok(!contentSecurityPolicy?.includes("images.unsplash.com"), "Hosting CSP must not allow external stock photos.");
+assert.ok(contentSecurityPolicy?.includes("frame-src 'none'"), "Hosting CSP must block embedded third-party frames.");
+
+const homePage = readFileSync("index.html", "utf8");
+assert.match(homePage, /src="\/src\/js\/main\.js"/, "The home page must load the source application entry point.");
+assert.match(homePage, /href="\/src\/css\/main\.css"/, "The home page must load the source stylesheet.");
+assert.match(homePage, /logo-epaviste\.png/, "The home page must reference the supplied logo.");
+assert.doesNotMatch(homePage, /<iframe\b/i, "Third-party maps must only load after a visitor clicks a link.");
+
+const privacyPage = readFileSync("politique-confidentialite.html", "utf8");
+assert.match(privacyPage, /ni formulaire, ni compte utilisateur.*ni base de données/s, "Privacy information must reflect the static site without visitor forms or a database.");
 
 console.log("OK: zones et recherche, distances, JavaScript, CSP, pages sans code inline et vérification des sinks XSS.");

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#05070a" />
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; img-src * data:;" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' ws://localhost:* ws://127.0.0.1:*; frame-src 'none'" />
     <meta name="description" content="Rachat de véhicules anciens, enlèvement d’épaves, dépannage et remorquage en Sarthe, Mayenne, Loir-et-Cher et Orne." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
@@ -12,8 +12,8 @@
     <meta property="og:description" content="Rachat de véhicules, enlèvement d’épaves, dépannage et remorquage. Consultez les 54 zones d’intervention en Sarthe, Mayenne, Loir-et-Cher et Orne." />
     <title>Épaviste & Dépannage 72 | Sarthe, Mayenne, Loir-et-Cher et Orne</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/assets/main-BDf-u7rq.css" />
-    <script type="module" crossorigin src="/assets/home-DPT70eTp.js"></script>
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <script type="module" src="/src/js/main.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Aller au contenu</a>
@@ -21,7 +21,7 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="#accueil" aria-label="Épaviste & Dépannage 72, accueil">
-          <span class="brand-logo"><img src="/assets/images/logo-epaviste.jpeg" alt="Épaviste & Dépannage 72" /></span>
+          <span class="brand-logo"><img src="/assets/images/logo-epaviste.png" alt="Logo Épaviste & Dépannage 72" /></span>
           <span class="brand-name"><strong data-company-name>Épaviste & Dépannage 72</strong><small>SARTHE · MAYENNE · LOIR-ET-CHER · ORNE</small></span>
         </a>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span></button>
@@ -140,9 +140,7 @@
             <div class="contact-item">
               <h3>Adresse</h3>
               <p><a href="https://www.google.com/maps?q=1+Route+du+Mans,+72560+Changé" target="_blank" rel="noopener noreferrer">1 Route du Mans, 72560 Changé</a></p>
-              <div class="map-container">
-                <iframe src="https://www.google.com/maps?q=1+Route+du+Mans,+72560+Changé&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Carte Google Maps vers 1 Route du Mans, 72560 Changé"></iframe>
-              </div>
+              <p><a href="https://www.google.com/maps/search/?api=1&amp;query=1+Route+du+Mans%2C+72560+Chang%C3%A9" target="_blank" rel="noopener noreferrer">Ouvrir l’adresse dans Google Maps ↗</a></p>
             </div>
             <div class="contact-item">
               <h3>Téléphone</h3>
@@ -155,9 +153,9 @@
 
     <footer class="site-footer">
       <div class="page-wrap footer-main">
-        <div class="footer-brand"><a class="brand" href="#accueil"><span class="brand-logo"><img src="/assets/images/logo-epaviste.jpeg" alt="Épaviste & Dépannage 72" /></span><span class="brand-name"><strong data-company-name>Épaviste & Dépannage 72</strong><small>SARTHE · MAYENNE · LOIR-ET-CHER · ORNE</small></span></a><p>Rachat de véhicules, enlèvement d’épaves, dépannage automobile et remorquage.</p></div>
+        <div class="footer-brand"><a class="brand" href="#accueil"><span class="brand-logo"><img src="/assets/images/logo-epaviste.png" alt="Logo Épaviste & Dépannage 72" /></span><span class="brand-name"><strong data-company-name>Épaviste & Dépannage 72</strong><small>SARTHE · MAYENNE · LOIR-ET-CHER · ORNE</small></span></a><p>Rachat de véhicules, enlèvement d’épaves, dépannage automobile et remorquage.</p></div>
         <div class="footer-column"><h2>Explorer</h2><a href="#services">Nos services</a><a href="#rachat">Rachat de véhicules</a><a href="#zones">Zones d’intervention</a><a href="#galerie">Galerie</a></div>
-        <div class="footer-column"><h2>Informations</h2><a href="#zones" data-footer-department="72">Sarthe · 21 villes</a><a href="#zones" data-footer-department="53">Mayenne · 20 villes</a><a href="#zones" data-footer-department="41">Loir-et-Cher · 8 villes</a><a href="#zones" data-footer-department="61">Orne · 5 villes</a><a href="./mentions-legales.html">Mentions légales</a><a href="./politique-confidentialite.html">Confidentialité</a></div>
+        <div class="footer-column"><h2>Informations</h2><a href="#zones" data-footer-department="72">Sarthe · 21 villes</a><a href="#zones" data-footer-department="53">Mayenne · 20 villes</a><a href="#zones" data-footer-department="41">Loir-et-Cher · 8 villes</a><a href="#zones" data-footer-department="61">Orne · 5 villes</a><a href="./mentions-legales.html">Mentions légales</a><a href="./politique-confidentialite.html">Politique de confidentialité</a></div>
         <div class="footer-column"><h2>Nous contacter</h2><p>1 route de Mans<br>72560 Changé</p><p><a href="tel:0766274853">07 66 27 48 53</a></p></div>
       </div>
       <div class="page-wrap footer-bottom"><span>© <span id="current-year"></span> <span data-company-name>Épaviste & Dépannage 72</span></span><span>Site vitrine · Informations géographiques à confirmer par l’entreprise</span><a href="#accueil">Retour en haut ↑</a></div>

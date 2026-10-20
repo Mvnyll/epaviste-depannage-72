@@ -25,4 +25,16 @@ export const gallery = [
     label: "En fin de journée",
     size: "standard",
   },
+  {
+    src: `${imagesPath}parc-vehicules-05.jpeg`,
+    alt: "Véhicules stationnés dans le parc de l’entreprise",
+    label: "Notre parc",
+    size: "standard",
+  },
+  {
+    src: `${imagesPath}parc-vehicules-06.jpeg`,
+    alt: "Voitures stationnées dans le parc",
+    label: "Véhicules",
+    size: "standard",
+  },
 ];
