@@ -56,7 +56,7 @@ Les prestations se modifient dans `src/js/data/services.js`. Les six photos de l
 
 ### Informations légales et confidentialité
 
-Le site est statique : il n’a ni formulaire, ni espace utilisateur, ni base de données, ni outil de mesure d’audience. La recherche et la géolocalisation facultative restent dans le navigateur. Les liens Google Maps ne s’ouvrent qu’à la demande. Les pages `mentions-legales.html` et `politique-confidentialite.html` décrivent ces pratiques; l’éditeur doit compléter les informations d’identification légale de l’entreprise avant publication définitive. L’hébergeur peut traiter des données techniques de connexion pour fournir et sécuriser le site.
+Le site est statique : il n’a ni formulaire, ni espace utilisateur, ni base de données, ni outil de mesure d’audience. La recherche et la géolocalisation facultative restent dans le navigateur. L’éditeur ne dépose, ne conserve ni ne traite aucun cookie. La carte Google Maps intégrée peut appliquer les règles propres aux cookies de Google. Les pages `mentions-legales.html` et `politique-confidentialite.html` décrivent ces pratiques; l’éditeur doit compléter les informations d’identification légale de l’entreprise avant publication définitive. L’hébergeur peut traiter des données techniques de connexion pour fournir et sécuriser le site.
 
 ## Déploiement GitHub Pages
 
@@ -109,6 +109,6 @@ Avant publication, remplacez les images par des ressources autorisées et ajoute
 
 Les recherches ne sont jamais interprétées comme du HTML : le rendu utilise `textContent` et des nœuds DOM créés explicitement. Les scripts sont locaux, les liens externes ouverts en nouvel onglet utilisent `rel="noopener noreferrer"`, et `npm run check` échoue si des sinks courants d’injection (`innerHTML`, `eval`, etc.), des gestionnaires d’événements inline ou des styles inline sont ajoutés.
 
-Une CSP stricte est appliquée aux pages et configurée dans `public/_headers` (Cloudflare Pages) et `firebase.json` (Firebase Hosting). Les en-têtes interdisent les objets/plugins, les iframes, le chargement de scripts tiers et les connexions externes. Les images proviennent des ressources locales. Les APIs caméra et microphone sont désactivées; la géolocalisation reste permise après consentement explicite.
+Une CSP stricte est appliquée aux pages et configurée dans `public/_headers` (Cloudflare Pages) et `firebase.json` (Firebase Hosting). Les en-têtes interdisent les objets/plugins et le chargement de scripts tiers; seul Google Maps est autorisé dans une iframe. Les images proviennent des ressources locales. Les APIs caméra et microphone sont désactivées; la géolocalisation reste permise après consentement explicite.
 
 Aucune protection ne peut garantir qu’un hébergeur, un compte de déploiement ou un ordinateur compromis ne puisse altérer les fichiers publiés. Protégez les accès Git et hébergeur avec MFA, limitez les personnes autorisées à publier, et gardez les dépendances à jour. Le site n’exécute aucun contenu fourni par les visiteurs et n’a aucun backend.

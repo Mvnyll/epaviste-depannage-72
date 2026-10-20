@@ -65,15 +65,17 @@ const hostingHeaders = JSON.parse(readFileSync("firebase.json", "utf8")).hosting
 const contentSecurityPolicy = hostingHeaders.flatMap((entry) => entry.headers).find((header) => header.key === "Content-Security-Policy")?.value;
 assert.ok(contentSecurityPolicy?.includes("script-src 'self'"), "Hosting CSP must only allow same-origin scripts.");
 assert.ok(contentSecurityPolicy?.includes("object-src 'none'"), "Hosting CSP must disable plugin content.");
-assert.ok(contentSecurityPolicy?.includes("frame-src 'none'"), "Hosting CSP must block embedded third-party frames.");
+assert.ok(contentSecurityPolicy?.includes("frame-src https://www.google.com https://maps.google.com"), "Hosting CSP must allow the embedded Google Maps frame.");
 
 const homePage = readFileSync("index.html", "utf8");
 assert.match(homePage, /src="\/src\/js\/main\.js"/, "The home page must load the source application entry point.");
 assert.match(homePage, /href="\/src\/css\/main\.css"/, "The home page must load the source stylesheet.");
 assert.match(homePage, /logo-epaviste\.png/, "The home page must reference the supplied logo.");
-assert.doesNotMatch(homePage, /<iframe\b/i, "Third-party maps must only load after a visitor clicks a link.");
+assert.match(homePage, /<iframe\b[^>]*src="https:\/\/www\.google\.com\/maps\?[^"]+output=embed"/i, "The contact section must embed the Google Maps location.");
 
 const privacyPage = readFileSync("politique-confidentialite.html", "utf8");
 assert.match(privacyPage, /ni formulaire, ni compte utilisateur.*ni base de données/s, "Privacy information must reflect the static site without visitor forms or a database.");
+assert.match(privacyPage, /L’éditeur du site ne dépose, ne conserve ni ne traite aucun cookie/, "Privacy information must state that the site owner does not handle cookies.");
+assert.match(privacyPage, /carte Google Maps intégrée.*susceptible de déposer ou lire ses propres cookies/s, "Privacy information must disclose possible cookies from embedded Google Maps.");
 
 console.log("OK: zones et recherche, distances, JavaScript, CSP, pages sans code inline et vérification des sinks XSS.");
