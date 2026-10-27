@@ -26,15 +26,15 @@ export const gallery = [
     size: "standard",
   },
   {
-    src: `${imagesPath}parc-vehicules-05.jpeg`,
-    alt: "Véhicules stationnés dans le parc de l’entreprise",
-    label: "Notre parc",
+    src: `${imagesPath}vehicule-accidente.jpg`,
+    alt: "Peugeot accidentée prise en charge après un choc à l’avant",
+    label: "Prise en charge d’un véhicule accidenté",
     size: "standard",
   },
   {
-    src: `${imagesPath}parc-vehicules-06.jpeg`,
-    alt: "Voitures stationnées dans le parc",
-    label: "Véhicules",
+    src: `${imagesPath}intervention-moteur.jpg`,
+    alt: "Intervention sur le moteur d’un véhicule, capot ouvert",
+    label: "Intervention sous le capot",
     size: "standard",
   },
 ];

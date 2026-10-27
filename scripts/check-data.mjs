@@ -17,8 +17,15 @@ assert.ok(serviceAreas.every((area) => area.mapsUrl.startsWith("https://www.goog
 assert.equal(centers.length, 0, "No physical center may be added without confirmed details.");
 
 const gallerySource = readFileSync("src/js/data/gallery.js", "utf8");
-const galleryImages = [...new Set(gallerySource.match(/parc-vehicules-\d{2}\.jpeg/g) || [])].sort();
-assert.deepEqual(galleryImages, Array.from({ length: 6 }, (_, index) => `parc-vehicules-${String(index + 1).padStart(2, "0")}.jpeg`));
+const galleryImages = [...new Set(gallerySource.match(/[\w-]+\.jpe?g/g) || [])].sort();
+assert.deepEqual(galleryImages, [
+  "intervention-moteur.jpg",
+  "parc-vehicules-01.jpeg",
+  "parc-vehicules-02.jpeg",
+  "parc-vehicules-03.jpeg",
+  "parc-vehicules-04.jpeg",
+  "vehicule-accidente.jpg",
+]);
 assert.ok(galleryImages.every((image) => existsSync(`public/assets/images/${image}`)), "Every gallery image must exist in public assets.");
 assert.ok(existsSync("public/assets/images/logo-epaviste.png"), "The displayed logo must exist in public assets.");
 

@@ -27,7 +27,10 @@
   .hero-image { background-position: 60% center; }
   .hero::before { background: linear-gradient(0deg, rgba(5,7,10,.99) 0%, rgba(5,7,10,.72) 50%, rgba(5,7,10,.12) 100%); }
   .hero-content { padding-top: 120px; padding-bottom: 100px; }
+  .hero-heading-row { display: block; }
   .hero h1 { font-size: clamp(46px, 13vw, 66px); }
+  .hero-phone { display: inline-grid; margin-top: 20px; padding: 12px 15px; }
+  .hero-phone strong { font-size: 16px; }
   .hero-copy { margin-top: 20px; font-size: 14px; }
   .hero-footnote { margin-top: 38px; }
   .hero-index { right: 18px; bottom: 28px; font-size: 14px; }
