@@ -1,0 +1,85 @@
+@media (max-width: 900px) {
+  .page-wrap { width: min(var(--wrap), calc(100% - 40px)); }
+  .header-inner { width: calc(100% - 40px); }
+  .primary-nav { gap: 17px; }
+  .primary-nav a { font-size: 11px; }
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .area-results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .finder-controls { grid-template-columns: minmax(180px, 1fr) auto; }
+  .button--location { grid-column: 1 / -1; justify-self: start; }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, 190px); }
+}
+
+@media (max-width: 680px) {
+  .page-wrap { width: calc(100% - 36px); }
+  .header-inner { width: calc(100% - 36px); min-height: 70px; }
+  .brand-logo img { width: 52px; height: 52px; }
+  .brand-name strong { font-size: 11px; }
+  .brand-name small { font-size: 7px; }
+  .menu-toggle { width: 44px; height: 44px; display: grid; align-content: center; justify-items: center; gap: 6px; border: 1px solid var(--line); background: rgba(5,7,10,.5); cursor: pointer; }
+  .menu-toggle span { width: 18px; height: 1px; background: var(--white); transition: transform 180ms ease; }
+  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+  .primary-nav { position: fixed; inset: 70px 0 0; display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 18px 24px 40px; background: rgba(5,7,10,.98); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; }
+  .primary-nav.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+  .primary-nav a { padding: 17px 4px; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .hero { min-height: 720px; min-height: 100svh; align-items: end; }
+  .hero-image { background-position: 60% center; }
+  .hero::before { background: linear-gradient(0deg, rgba(5,7,10,.99) 0%, rgba(5,7,10,.72) 50%, rgba(5,7,10,.12) 100%); }
+  .hero-content { padding-top: 120px; padding-bottom: 100px; }
+  .hero-heading-row { display: block; }
+  .hero h1 { font-size: clamp(46px, 13vw, 66px); }
+  .hero-phone { display: inline-grid; margin-top: 20px; padding: 12px 15px; }
+  .hero-phone strong { font-size: 16px; }
+  .hero-copy { margin-top: 20px; font-size: 14px; }
+  .hero-footnote { margin-top: 38px; }
+  .hero-index { right: 18px; bottom: 28px; font-size: 14px; }
+  .section { padding: 78px 0; }
+  .section-heading { display: block; margin-bottom: 32px; }
+  .section-heading h2, .vehicle-content h2, .about-content h2 { font-size: clamp(35px, 10vw, 48px); }
+  .section-heading > p { margin-top: 16px; font-size: 13px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service-card { min-height: 190px; padding: 22px; }
+  .service-card__top { margin-bottom: 21px; }
+  .vehicle-section { grid-template-columns: 1fr; }
+  .vehicle-photo { min-height: 300px; background-image: linear-gradient(0deg, #090d12, transparent 55%), url("/assets/images/parc-vehicules-01.jpeg"); }
+  .vehicle-content { padding: 20px 18px 75px; }
+  .vehicle-number { right: 18px; bottom: 24px; }
+  .area-finder { padding: 20px 15px; }
+  .finder-topline { align-items: flex-start; gap: 12px; }
+  .finder-icon { width: 40px; height: 40px; flex: 0 0 40px; }
+  .finder-topline h3 { font-size: 17px; }
+  .finder-topline p { line-height: 1.5; }
+  .finder-controls { grid-template-columns: 1fr; }
+  .finder-controls input, .finder-controls .button { width: 100%; }
+  .button--location { grid-column: auto; justify-self: stretch; }
+  .department-filters { gap: 7px; }
+  .department-filters > span { flex: 0 0 100%; margin-bottom: 3px; }
+  .department-filters button { padding-inline: 9px; font-size: 10px; }
+  .area-results { grid-template-columns: 1fr; }
+  .area-card { padding: 16px; }
+  .area-card h3 { font-size: 15px; }
+  .area-card__links { gap: 20px; }
+  .map-link { min-height: 24px; display: inline-flex; align-items: center; font-size: 11px; }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, 165px); gap: 8px; }
+  .gallery-item span { left: 12px; bottom: 12px; font-size: 11px; }
+  .about-section { min-height: auto; display: block; padding-top: 260px; }
+  .about-image { inset: 0 0 auto; height: 300px; background-image: linear-gradient(0deg, #0b1017, transparent 70%), url("/assets/images/parc-vehicules-02.jpeg"); }
+  .about-content { padding: 30px 18px 78px; }
+  .about-coordinate { left: 18px; bottom: 23px; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 38px 20px; padding-block: 44px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-bottom { display: grid; grid-template-columns: 1fr auto; font-size: 9px; }
+  .footer-bottom > span:nth-child(2) { grid-column: 1 / -1; order: 3; }
+  .lightbox { padding: 56px 12px 20px; }
+  .lightbox-control { top: auto; bottom: 12px; transform: none; }
+  .lightbox-previous { left: calc(50% - 50px); }
+  .lightbox-next { right: calc(50% - 50px); }
+  .lightbox figure { padding-bottom: 52px; }
+  .back-to-top { right: 14px; bottom: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
