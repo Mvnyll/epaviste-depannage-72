@@ -34,7 +34,7 @@ export const gallery = [
   {
     src: `${imagesPath}intervention-moteur.jpg`,
     alt: "Intervention sur le moteur d’un véhicule, capot ouvert",
-    label: "Intervention sous le capot",
+    label: "Enlèvement gratuit de véhicules",
     size: "standard",
   },
 ];
