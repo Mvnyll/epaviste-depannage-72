@@ -1,0 +1,115 @@
+{
+  "planHash": "ab6e2b17a213c9e7394db3caf2e7d7510df29a2337ecee3e4b2b94bb7b25b7b0",
+  "phase": "baseline",
+  "recordedAtUtc": "2026-11-11T13:02:46.9135788Z",
+  "retryCount": 0,
+  "resetBaseline": true,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 4587,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "production-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E epaviste-depannage-72@1.0.0 build\r\n\u003E vite build\r\n\r\n\u001B[36mvite v6.4.4 \u001B[32mbuilding for production...\u001B[36m\u001B[39m\r\ntransforming...\r\n\u001B[32m\u2713\u001B[39m 18 modules transformed.\r\nrendering chunks...\r\ncomputing gzip size...\r\n\u001B[2mdist/\u001B[22m\u001B[32m404.html                        \u001B[39m\u001B[1m\u001B[2m 0.89 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 0.55 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32mmentions-legales.html           \u001B[39m\u001B[1m\u001B[2m 3.43 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 1.63 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32mpolitique-confidentialite.html  \u001B[39m\u001B[1m\u001B[2m 4.83 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 2.02 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32mindex.html                      \u001B[39m\u001B[1m\u001B[2m14.44 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 4.33 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[35massets/notFound-CAeZJZP3.css    \u001B[39m\u001B[1m\u001B[2m 0.55 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 0.35 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[35massets/main-Bz105vAf.css        \u001B[39m\u001B[1m\u001B[2m21.52 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 5.43 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[36massets/home-DTj8uV-r.js         \u001B[39m\u001B[1m\u001B[2m15.11 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 5.54 kB\u001B[22m\r\n\u001B[32m\u2713 built in 443ms\u001B[39m\r\n",
+        "durationMs": 1987
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E epaviste-depannage-72@1.0.0 check\r\n\u003E node scripts/check-data.mjs\r\n\r\nOK: zones et recherche, distances, JavaScript, CSP, pages sans code inline et v\u00E9rification des sinks XSS.\r\n",
+        "durationMs": 2331,
+        "testResults": {
+          "testFramework": "unknown",
+          "runnerDetectedFrom": "none",
+          "testsTotal": 0,
+          "testsPassed": 0,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": true
+        }
+      },
+      {
+        "name": "homepage-http-200",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\r\n\u003Chtml lang=\u0022fr\u0022\u003E\r\n  \u003Chead\u003E\n    \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\r\n    \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\r\n    \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0\u0022 /\u003E\r\n    \u003Cmeta name=\u0022theme-color\u0022 content=\u0022#05070a\u0022 /\u003E\r\n    \u003Cmeta http-equiv=\u0022Content-Security-Policy\u0022 content=\u0022default-src \u0027self\u0027; base-uri \u0027self\u0027; object-src \u0027none\u0027; form-action \u0027none\u0027; script-src \u0027self\u0027 \u0027unsafe-inline\u0027; style-src \u0027self\u0027 \u0027unsafe-inline\u0027; img-src \u0027self\u0027 data:; font-src \u0027self\u0027; connect-src \u0027self\u0027 ws://localhost:* ws://127.0.0.1:*; frame-src https://www.google.com https://maps.google.com\u0022\u003E\r\n    \u003Cmeta name=\u0022description\u0022 content=\u0022Rachat de v\u00E9hicules anciens, enl\u00E8vement d\u2019\u00E9paves, d\u00E9pannage et remorquage en Sarthe, Mayenne, Loir-et-Cher et Orne.\u0022 /\u003E\r\n    \u003Cmeta property=\u0022og:type\u0022 content=\u0022website\u0022 /\u003E\r\n    \u003Cmeta property=\u0022og:locale\u0022 content=\u0022fr_FR\u0022 /\u003E\r\n    \u003Cmeta property=\u0022og:title\u0022 content=\u0022\u00C9paviste \u0026 D\u00E9pannage 72 | Sarthe, Mayenne, Loir-et-Cher et Orne\u0022 /\u003E\r\n    \u003Cmeta property=\u0022og:description\u0022 content=\u0022Rachat de v\u00E9hicules, enl\u00E8vement d\u2019\u00E9paves, d\u00E9pannage et remorquage. Consultez les 54 zones d\u2019intervention en Sarthe, Mayenne, Loir-et-Cher et Orne.\u0022 /\u003E\r\n    \u003Ctitle\u003E\u00C9paviste \u0026 D\u00E9pannage 72 | Sarthe, Mayenne, Loir-et-Cher et Orne\u003C/title\u003E\r\n    \u003Clink rel=\u0022icon\u0022 href=\u0022/favicon.svg\u0022 type=\u0022image/svg\u002Bxml\u0022 /\u003E\r\n    \u003Clink rel=\u0022stylesheet\u0022 href=\u0022/src/css/main.css\u0022 /\u003E\r\n    \u003Cscript type=\u0022module\u0022 src=\u0022/src/js/main.js\u0022\u003E\u003C/script\u003E\r\n  \u003C/head\u003E\r\n  \u003Cbody\u003E\r\n    \u003Ca class=\u0022skip-link\u0022 href=\u0022#main\u0022\u003EAller au contenu\u003C/a\u003E\r\n    \u003Cdiv class=\u0022scroll-progress\u0022 aria-hidden=\u0022true\u0022\u003E\u003C/div\u003E\r\n    \u003Cheader class=\u0022site-header\u0022\u003E\r\n      \u003Cdiv class=\u0022header-inner\u0022\u003E\r\n        \u003Ca class=\u0022brand\u0022 href=\u0022#accueil\u0022 aria-label=\u0022\u00C9paviste \u0026 D\u00E9pannage 72, accueil\u0022\u003E\r\n          \u003Cspan class=\u0022brand-logo\u0022\u003E\u003Cimg src=\u0022/assets/images/logo-epaviste.png\u0022 alt=\u0022Logo \u00C9paviste \u0026 D\u00E9pannage 72\u0022 /\u003E\u003C/span\u003E\r\n          \u003Cspan class=\u0022brand-name\u0022\u003E\u003Cstrong data-company-name\u003E\u00C9paviste \u0026 D\u00E9pannage 72\u003C/strong\u003E\u003Csmall\u003ESARTHE \u00B7 MAYENNE \u00B7 LOIR-ET-CHER \u00B7 ORNE\u003C/small\u003E\u003C/span\u003E\r\n        \u003C/a\u003E\r\n        \u003Cbutton class=\u0022menu-toggle\u0022 id=\u0022menu-toggle\u0022 type=\u0022button\u0022 aria-label=\u0022Ouvrir le menu\u0022 aria-controls=\u0022primary-nav\u0022 aria-expanded=\u0022false\u0022\u003E\u003Cspan\u003E\u003C/span\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/button\u003E\r\n        \u003Cnav class=\u0022primary-nav\u0022 id=\u0022primary-nav\u0022 aria-label=\u0022Navigation principale\u0022\u003E\r\n          \u003Ca href=\u0022#accueil\u0022\u003EAccueil\u003C/a\u003E\r\n          \u003Ca href=\u0022#services\u0022\u003EServices\u003C/a\u003E\r\n          \u003Ca href=\u0022#rachat\u0022\u003ERachat\u003C/a\u003E\r\n          \u003Ca href=\u0022#zones\u0022\u003ENos zones\u003C/a\u003E\r\n          \u003Ca href=\u0022#galerie\u0022\u003EGalerie\u003C/a\u003E\r\n          \u003Ca href=\u0022#apropos\u0022\u003E\u00C0 propos\u003C/a\u003E\r\n          \u003Ca href=\u0022#contact\u0022\u003ENous contacter\u003C/a\u003E\r\n        \u003C/nav\u003E\r\n      \u003C/div\u003E\r\n    \u003C/header\u003E\r\n\r\n    \u003Cmain id=\u0022main\u0022\u003E\r\n      \u003Csection class=\u0022hero\u0022 id=\u0022accueil\u0022 aria-labelledby=\u0022hero-title\u0022\u003E\r\n        \u003Cdiv class=\u0022hero-image\u0022 role=\u0022img\u0022 aria-label=\u0022Camion de d\u00E9pannage sur une route au cr\u00E9puscule\u0022\u003E\u003C/div\u003E\r\n        \u003Cdiv class=\u0022hero-grid\u0022 aria-hidden=\u0022true\u0022\u003E\u003C/div\u003E\r\n        \u003Cdiv class=\u0022hero-content page-wrap\u0022\u003E\r\n          \u003Cp class=\u0022eyebrow hero-eyebrow\u0022\u003E\u003Cspan\u003E\u003C/span\u003E \u00C9PAVISTE \u00B7 D\u00C9PANNAGE \u00B7 REMORQUAGE\u003C/p\u003E\r\n          \u003Cdiv class=\u0022hero-heading-row\u0022\u003E\r\n            \u003Ch1 id=\u0022hero-title\u0022\u003EVOTRE V\u00C9HICULE A DE LA VALEUR, \u003Cem\u003EM\u00CAME EN PANNE.\u003C/em\u003E\u003C/h1\u003E\r\n            \u003Ca class=\u0022hero-phone\u0022 href=\u0022tel:0766274853\u0022 aria-label=\u0022Appelez-nous au 07 66 27 48 53\u0022\u003E\u003Cspan\u003EAppelez-nous\u003C/span\u003E\u003Cstrong\u003E07 66 27 48 53\u003C/strong\u003E\u003C/a\u003E\r\n          \u003C/div\u003E\r\n          \u003Cp class=\u0022hero-copy\u0022\u003EApr\u00E8s votre appel, nous pouvons valoriser votre v\u00E9hicule en moins de 5 minutes. Enl\u00E8vement d\u2019\u00E9pave \u003Cstrong\u003Egratuit\u003C/strong\u003E, rachat de v\u00E9hicules anciens, accident\u00E9s ou hors d\u2019usage (voitures et motos), d\u00E9marches administratives prises en charge. Remorquage au Mans.\u003C/p\u003E\r\n          \u003Cdiv class=\u0022hero-actions\u0022\u003E\r\n            \u003Ca class=\u0022button button--primary\u0022 href=\u0022#services\u0022\u003ED\u00E9couvrir nos services \u003Cspan aria-hidden=\u0022true\u0022\u003E\u2197\u003C/span\u003E\u003C/a\u003E\r\n            \u003Ca class=\u0022button button--outline\u0022 href=\u0022#zones\u0022\u003ETrouver une zone \u003Cspan aria-hidden=\u0022true\u0022\u003E\u2193\u003C/span\u003E\u003C/a\u003E\r\n          \u003C/div\u003E\r\n          \u003Cdiv class=\u0022hero-footnote\u0022\u003E\u003Cspan class=\u0022signal-dot\u0022\u003E\u003C/span\u003E Sarthe (72) \u00B7 Mayenne (53) \u00B7 Loir-et-Cher \n\u2026[truncated]",
+        "durationMs": 1644
+      }
+    ],
+    "executions": [
+      {
+        "source": "setup[0]",
+        "resolvedExecutable": "C:\\Users\\Mvnyll\\AppData\\Local\\Programs\\node-v24.22.0-win-x64\\npm.CMD",
+        "args": [
+          "ci"
+        ],
+        "cwd": "C:\\Users\\Mvnyll\\Desktop\\francenew",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "production-build",
+        "resolvedExecutable": "C:\\Users\\Mvnyll\\AppData\\Local\\Programs\\node-v24.22.0-win-x64\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "C:\\Users\\Mvnyll\\Desktop\\francenew",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\Users\\Mvnyll\\AppData\\Local\\Programs\\node-v24.22.0-win-x64\\npm.CMD",
+        "args": [
+          "run",
+          "check"
+        ],
+        "cwd": "C:\\Users\\Mvnyll\\Desktop\\francenew",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "homepage-http-200",
+        "resolvedExecutable": "C:\\Users\\Mvnyll\\AppData\\Local\\Programs\\node-v24.22.0-win-x64\\npm.CMD",
+        "args": [
+          "run",
+          "dev",
+          "--",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "5173",
+          "--strictPort"
+        ],
+        "cwd": "C:\\Users\\Mvnyll\\Desktop\\francenew",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}
