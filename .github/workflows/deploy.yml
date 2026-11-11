@@ -29,3 +29,4 @@ jobs:
         with:
           artifact_name: github-pages
           publish_dir: dist
+# Force redeploy
