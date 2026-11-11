@@ -12,3 +12,4 @@ jobs:
       - uses: actions/deploy-pages@v4
         with:
           publish_dir: dist
+# Trigger
