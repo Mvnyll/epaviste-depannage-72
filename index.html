@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#05070a" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' ws://localhost:* ws://127.0.0.1:*; frame-src https://www.google.com https://maps.google.com" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' ws://localhost:* ws://127.0.0.1:*; frame-src https://www.google.com https://maps.google.com">
     <meta name="description" content="Rachat de véhicules anciens, enlèvement d’épaves, dépannage et remorquage en Sarthe, Mayenne, Loir-et-Cher et Orne." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
@@ -21,7 +21,7 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="#accueil" aria-label="Épaviste & Dépannage 72, accueil">
-          <span class="brand-logo"><img src="/assets/images/logo-epaviste.png" alt="Logo Épaviste & Dépannage 72" /></span>
+          <span class="brand-logo"><img src="/assets/images/logo-epaviste.svg" alt="Logo Épaviste & Dépannage 72" /></span>
           <span class="brand-name"><strong data-company-name>Épaviste & Dépannage 72</strong><small>SARTHE · MAYENNE · LOIR-ET-CHER · ORNE</small></span>
         </a>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span></button>
@@ -47,7 +47,7 @@
             <h1 id="hero-title">VOTRE VÉHICULE A DE LA VALEUR, <em>MÊME EN PANNE.</em></h1>
             <a class="hero-phone" href="tel:0766274853" aria-label="Appelez-nous au 07 66 27 48 53"><span>Appelez-nous</span><strong>07 66 27 48 53</strong></a>
           </div>
-          <p class="hero-copy">Après votre appel, nous pouvons valoriser votre véhicule en moins de 5 minutes. Rachat de véhicules anciens, accidentés ou hors d’usage, enlèvement d’épaves et remorquage au Mans.</p>
+          <p class="hero-copy">Après votre appel, nous pouvons valoriser votre véhicule en moins de 5 minutes. Enlèvement d’épave <strong>gratuit</strong>, rachat de véhicules anciens, accidentés ou hors d’usage (voitures et motos), démarches administratives prises en charge. Remorquage au Mans.</p>
           <div class="hero-actions">
             <a class="button button--primary" href="#services">Découvrir nos services <span aria-hidden="true">↗</span></a>
             <a class="button button--outline" href="#zones">Trouver une zone <span aria-hidden="true">↓</span></a>
@@ -73,7 +73,7 @@
           <p class="eyebrow">RACHAT DE VÉHICULES</p>
           <h2 id="vehicle-title">NOUS RACHETONS VOTRE VÉHICULE, <em>MÊME EN PANNE</em></h2>
           <p>Votre véhicule est ancien, accidenté, immobilisé ou hors d’usage ? Découvrez notre activité de rachat et les solutions proposées selon la situation du véhicule.</p>
-          <div class="vehicle-tags" aria-label="Types de véhicules concernés">
+          <div class="vehicle-tags" role="region" aria-label="Types de véhicules concernés">
             <span>En panne</span><span>Accidentés</span><span>Anciens</span><span>Immobilisés</span><span>Hors d’usage</span><span>À orienter vers une filière adaptée</span>
           </div>
           <p class="fine-print">Toute prise en charge dépend de l’évaluation du véhicule et des conditions applicables.</p>
@@ -142,11 +142,11 @@
           <div class="contact-info">
             <div class="contact-item">
               <h3>Adresse</h3>
-              <p><a href="https://www.google.com/maps?q=1+Route+du+Mans,+72560+Changé" target="_blank" rel="noopener noreferrer">1 Route du Mans, 72560 Changé</a></p>
+              <p><a href="https://www.google.com/maps?q=330+avenue+Rhin+et+Danube,+72000+Le+Mans,+France" target="_blank" rel="noopener noreferrer">330 avenue Rhin et Danube, 72000 Le Mans, France</a></p>
               <div class="map-container">
-                <iframe src="https://www.google.com/maps?q=1+Route+du+Mans,+72560+Changé&amp;output=embed" title="Carte Google Maps : 1 route du Mans, 72560 Changé" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps?q=330+avenue+Rhin+et+Danube,+72000+Le+Mans,+France&amp;output=embed" title="Carte Google Maps : 330 avenue Rhin et Danube, 72000 Le Mans, France" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
-              <p><a href="https://www.google.com/maps/search/?api=1&amp;query=1+Route+du+Mans%2C+72560+Chang%C3%A9" target="_blank" rel="noopener noreferrer">Ouvrir l’adresse dans Google Maps ↗</a></p>
+              <p><a href="https://www.google.com/maps/search/?api=1&amp;query=330+avenue+Rhin+et+Danube%2C+72000+Le+Mans%2C+France" target="_blank" rel="noopener noreferrer">Ouvrir l’adresse dans Google Maps ↗</a></p>
             </div>
             <div class="contact-item">
               <h3>Téléphone</h3>
@@ -159,10 +159,10 @@
 
     <footer class="site-footer">
       <div class="page-wrap footer-main">
-        <div class="footer-brand"><a class="brand" href="#accueil"><span class="brand-logo"><img src="/assets/images/logo-epaviste.png" alt="Logo Épaviste & Dépannage 72" /></span><span class="brand-name"><strong data-company-name>Épaviste & Dépannage 72</strong><small>SARTHE · MAYENNE · LOIR-ET-CHER · ORNE</small></span></a><p>Rachat de véhicules, enlèvement d’épaves, dépannage automobile et remorquage.</p></div>
+        <div class="footer-brand"><a class="brand" href="#accueil"><span class="brand-logo"><img src="/assets/images/logo-epaviste.svg" alt="Logo Épaviste & Dépannage 72" /></span><span class="brand-name"><strong data-company-name>Épaviste & Dépannage 72</strong><small>SARTHE · MAYENNE · LOIR-ET-CHER · ORNE</small></span></a><p>Rachat de véhicules, enlèvement d’épaves <strong>gratuit</strong>, dépannage automobile, remorquage et prise en charge administrative.</p></div>
         <div class="footer-column"><h2>Explorer</h2><a href="#services">Nos services</a><a href="#rachat">Rachat de véhicules</a><a href="#zones">Zones d’intervention</a><a href="#galerie">Galerie</a></div>
         <div class="footer-column"><h2>Informations</h2><a href="#zones" data-footer-department="72">Sarthe · 21 villes</a><a href="#zones" data-footer-department="53">Mayenne · 20 villes</a><a href="#zones" data-footer-department="41">Loir-et-Cher · 8 villes</a><a href="#zones" data-footer-department="61">Orne · 5 villes</a><a href="./mentions-legales.html">Mentions légales</a><a href="./politique-confidentialite.html">Politique de confidentialité</a></div>
-        <div class="footer-column"><h2>Nous contacter</h2><p>1 route de Mans<br>72560 Changé</p><p><a href="tel:0766274853">07 66 27 48 53</a></p></div>
+        <div class="footer-column"><h2>Nous contacter</h2><p>330 avenue Rhin et Danube<br>72000 Le Mans, France</p><p><a href="tel:0766274853">07 66 27 48 53</a></p></div>
       </div>
       <div class="page-wrap footer-bottom"><span>© <span id="current-year"></span> <span data-company-name>Épaviste & Dépannage 72</span></span><span>Site vitrine · Informations géographiques à confirmer par l’entreprise</span><a href="#accueil">Retour en haut ↑</a></div>
     </footer>
@@ -170,7 +170,7 @@
     <dialog class="lightbox" id="lightbox" aria-label="Galerie photo">
       <button class="lightbox-close" type="button" data-close-lightbox aria-label="Fermer la galerie">×</button>
       <button class="lightbox-control lightbox-previous" type="button" data-previous aria-label="Photo précédente">←</button>
-      <figure><img src="" alt="" /><figcaption></figcaption></figure>
+      <figure><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48L3N2Zz4=" alt="" /><figcaption></figcaption></figure>
       <button class="lightbox-control lightbox-next" type="button" data-next aria-label="Photo suivante">→</button>
     </dialog>
     <button class="back-to-top" id="back-to-top" type="button" aria-label="Retour en haut">↑</button>
