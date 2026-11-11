@@ -42,7 +42,7 @@
   .service-card { min-height: 190px; padding: 22px; }
   .service-card__top { margin-bottom: 21px; }
   .vehicle-section { grid-template-columns: 1fr; }
-  .vehicle-photo { min-height: 300px; background-image: linear-gradient(0deg, #090d12, transparent 55%), url("/assets/images/parc-vehicules-01.jpeg"); }
+  .vehicle-photo { min-height: 300px; background-image: linear-gradient(0deg, #090d12, transparent 55%), url("../../assets/images/parc-vehicules-01.jpeg"); }
   .vehicle-content { padding: 20px 18px 75px; }
   .vehicle-number { right: 18px; bottom: 24px; }
   .area-finder { padding: 20px 15px; }
@@ -64,7 +64,7 @@
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, 165px); gap: 8px; }
   .gallery-item span { left: 12px; bottom: 12px; font-size: 11px; }
   .about-section { min-height: auto; display: block; padding-top: 260px; }
-  .about-image { inset: 0 0 auto; height: 300px; background-image: linear-gradient(0deg, #0b1017, transparent 70%), url("/assets/images/parc-vehicules-02.jpeg"); }
+  .about-image { inset: 0 0 auto; height: 300px; background-image: linear-gradient(0deg, #0b1017, transparent 70%), url("../../assets/images/parc-vehicules-02.jpeg"); }
   .about-content { padding: 30px 18px 78px; }
   .about-coordinate { left: 18px; bottom: 23px; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 38px 20px; padding-block: 44px; }

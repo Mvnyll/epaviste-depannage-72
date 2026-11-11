@@ -63,11 +63,10 @@ Le site est statique : il n’a ni formulaire, ni espace utilisateur, ni base de
 Le dépôt `Mvnyll/epaviste-depannage-72` est configuré pour publier automatiquement le site sur GitHub Pages après chaque push sur `main`.
 
 1. Dans GitHub, ouvrez **Settings → Pages** et définissez **Build and deployment → Source** sur **GitHub Actions**.
-2. Envoyez le contenu de ce projet dans la branche `main` (sans `node_modules/` ni `dist/`).
-3. Dans l’onglet **Actions**, attendez la fin du workflow **Deploy to GitHub Pages**.
-4. Le site sera disponible à l’adresse `https://mvnyll.github.io/epaviste-depannage-72/`.
-
-Le workflow exécute `npm ci`, `npm run check` et `npm run build` avant de publier `dist/`. Vite et les liens internes utilisent le chemin du dépôt GitHub Pages en production.
+2. Envoyez le contenu de ce projet dans la branche `main` (sans `node_modules/`).
+3. Le workflow **Deploy to GitHub Pages** exécute `npm ci`, `npm run check` et `npm run build`, puis publie `dist/`.
+4. Dans l’onglet **Actions**, vérifiez que le workflow se termine avec succès.
+5. Le site sera disponible à l’adresse `https://mvnyll.github.io/epaviste-depannage-72/`.
 
 ## Déploiement Cloudflare Pages
 
