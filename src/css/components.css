@@ -10,3 +10,6 @@
 .text-link { display: inline-flex; align-items: center; gap: 14px; margin-top: 8px; color: var(--white); font-size: 12px; font-weight: 700; text-decoration: none; }
 .text-link span { color: var(--blue); }
 .text-link:hover { color: var(--blue); }
+.whatsapp-link { width: fit-content; min-height: 44px; display: inline-flex; align-items: center; gap: 12px; margin-top: 14px; padding: 0 16px; border: 1px solid #25d366; background: #25d366; color: #07130b !important; font-size: 12px; font-weight: 800; text-decoration: none !important; transition: background 180ms ease, transform 180ms ease; }
+.whatsapp-link:hover { background: #46e27f; transform: translateY(-2px); }
+.whatsapp-link:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
