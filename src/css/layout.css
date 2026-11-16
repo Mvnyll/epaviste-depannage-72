@@ -85,6 +85,13 @@
 .department-filters button[aria-pressed="true"] { border-color: var(--blue); background: rgba(0,168,255,.1); color: var(--white); }
 .department-filters button b { margin-left: 7px; color: var(--blue); font-size: 10px; }
 .department-filters .clear-search { border-color: transparent; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.sarthe-section { padding: 64px 0; background: #090d12; }
+.sarthe-callout { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: clamp(24px, 4vw, 44px); border: 1px solid rgba(0,168,255,.28); background: linear-gradient(120deg, rgba(0,168,255,.07), rgba(17,25,35,.55)); }
+.sarthe-copy { max-width: 800px; }
+.sarthe-copy h2 { margin: 0 0 16px; font-family: var(--display); font-size: clamp(28px, 4vw, 42px); line-height: 1.1; }
+.sarthe-copy > p:not(.eyebrow) { margin: 0 0 10px; color: var(--gray); font-size: 13px; line-height: 1.7; }
+.sarthe-copy > p:last-child { margin-bottom: 0; }
+.sarthe-contact-link { flex: 0 0 auto; max-width: 320px; text-align: center; }
 .results-heading { display: flex; align-items: baseline; justify-content: space-between; margin: 25px 0 14px; }
 .results-heading h4 { margin: 0; font-size: 13px; }
 .results-summary { display: flex; align-items: center; gap: 16px; }
