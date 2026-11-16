@@ -58,15 +58,19 @@ Les prestations se modifient dans `src/js/data/services.js`. Les six photos de l
 
 Le site est statique : il n’a ni formulaire, ni espace utilisateur, ni base de données, ni outil de mesure d’audience. La recherche et la géolocalisation facultative restent dans le navigateur. L’éditeur ne dépose, ne conserve ni ne traite aucun cookie. La carte Google Maps intégrée peut appliquer les règles propres aux cookies de Google. Les pages `mentions-legales.html` et `politique-confidentialite.html` décrivent ces pratiques; l’éditeur doit compléter les informations d’identification légale de l’entreprise avant publication définitive. L’hébergeur peut traiter des données techniques de connexion pour fournir et sécuriser le site.
 
-## Déploiement GitHub Pages
+## Déploiement Vercel (hébergement actuel)
 
-Le dépôt `Mvnyll/epaviste-depannage-72` est configuré pour publier automatiquement le site sur GitHub Pages après chaque push sur `main`.
+Le dépôt GitHub est la source du projet; Vercel construit et héberge le site. Importez le dépôt `Mvnyll/epaviste-depannage-72` dans Vercel et choisissez `main` comme branche de production.
+
+Vercel détecte Vite. La configuration attendue est la racine `./`, la commande de build `npm run build` et le répertoire de sortie `dist`. Chaque push sur `main` déclenche un déploiement Vercel. Ajoutez le domaine personnalisé dans les paramètres du projet Vercel et configurez les enregistrements DNS indiqués par Vercel.
+
+## Déploiement GitHub Pages (copie secondaire)
+
+Le workflow `.github/workflows/deploy.yml` publie également une copie sur GitHub Pages après chaque push sur `main`. Ce déploiement est indépendant de Vercel et ne bloque pas le site Vercel ni son domaine personnalisé. Il peut être désactivé si cette copie n’est pas souhaitée.
 
 1. Dans GitHub, ouvrez **Settings → Pages** et définissez **Build and deployment → Source** sur **GitHub Actions**.
-2. Envoyez le contenu de ce projet dans la branche `main` (sans `node_modules/`).
-3. Le workflow **Deploy to GitHub Pages** exécute `npm ci`, `npm run check` et `npm run build`, puis publie `dist/`.
-4. Dans l’onglet **Actions**, vérifiez que le workflow se termine avec succès.
-5. Le site sera disponible à l’adresse `https://mvnyll.github.io/epaviste-depannage-72/`.
+2. Le workflow **Deploy to GitHub Pages** exécute `npm ci`, `npm run check` et `npm run build`, puis publie `dist/`.
+3. Le site secondaire est disponible à l’adresse `https://mvnyll.github.io/epaviste-depannage-72/`.
 
 ## Déploiement Cloudflare Pages
 
@@ -108,6 +112,6 @@ Avant publication, remplacez les images par des ressources autorisées et ajoute
 
 Les recherches ne sont jamais interprétées comme du HTML : le rendu utilise `textContent` et des nœuds DOM créés explicitement. Les scripts sont locaux, les liens externes ouverts en nouvel onglet utilisent `rel="noopener noreferrer"`, et `npm run check` échoue si des sinks courants d’injection (`innerHTML`, `eval`, etc.), des gestionnaires d’événements inline ou des styles inline sont ajoutés.
 
-Une CSP stricte est appliquée aux pages et configurée dans `public/_headers` (Cloudflare Pages) et `firebase.json` (Firebase Hosting). Les en-têtes interdisent les objets/plugins et le chargement de scripts tiers; seul Google Maps est autorisé dans une iframe. Les images proviennent des ressources locales. Les APIs caméra et microphone sont désactivées; la géolocalisation reste permise après consentement explicite.
+Une CSP stricte est appliquée aux pages. Les règles HTTP dans `public/_headers` concernent Cloudflare Pages et celles de `firebase.json` concernent Firebase Hosting; Vercel ne lit pas ces deux fichiers. Les pages HTML conservent leur CSP via une balise meta, mais les autres en-têtes HTTP de ces configurations ne sont pas automatiquement appliqués sur Vercel. Les images proviennent des ressources locales. Les APIs caméra et microphone sont désactivées; la géolocalisation reste permise après consentement explicite.
 
 Aucune protection ne peut garantir qu’un hébergeur, un compte de déploiement ou un ordinateur compromis ne puisse altérer les fichiers publiés. Protégez les accès Git et hébergeur avec MFA, limitez les personnes autorisées à publier, et gardez les dépendances à jour. Le site n’exécute aucun contenu fourni par les visiteurs et n’a aucun backend.
