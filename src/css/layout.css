@@ -29,6 +29,9 @@
 .hero h1 em { display: block; }
 .hero-offer { margin: 8px 0 0; color: var(--blue); font-family: var(--display); font-size: clamp(44px, 5.5vw, 74px); line-height: 1; font-weight: 900; }
 .hero-phone, .hero-email { flex: 0 0 auto; display: grid; gap: 7px; padding: 17px 20px; border: 1px solid rgba(0,168,255,.6); background: rgba(5,7,10,.62); color: var(--white); text-decoration: none; transition: background 180ms ease, border-color 180ms ease; }
+.approval-badge { width: fit-content; max-width: 100%; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 1px solid rgba(213,220,229,.25); background: rgba(5,7,10,.78); color: var(--gray); font-size: 11px; line-height: 1.4; }
+.approval-badge img { width: 58px; height: auto; }
+.approval-badge strong { display: block; color: var(--white); font-size: 13px; }
 .hero-phone:hover, .hero-email:hover { border-color: var(--blue); background: rgba(0,168,255,.12); }
 .hero-phone span { color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
 .hero-phone strong { font-size: 18px; white-space: nowrap; }
