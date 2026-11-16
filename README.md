@@ -62,7 +62,7 @@ Le site est statique : il n’a ni formulaire, ni espace utilisateur, ni base de
 
 Le dépôt GitHub est la source du projet; Vercel construit et héberge le site. Importez le dépôt `Mvnyll/epaviste-depannage-72` dans Vercel et choisissez `main` comme branche de production.
 
-Vercel détecte Vite. La configuration attendue est la racine `./`, la commande de build `npm run build` et le répertoire de sortie `dist`. Chaque push sur `main` déclenche un déploiement Vercel. Ajoutez le domaine personnalisé dans les paramètres du projet Vercel et configurez les enregistrements DNS indiqués par Vercel.
+Vercel détecte Vite. La configuration attendue est la racine `./`, la commande de build `npm run build` et le répertoire de sortie `dist`. Chaque push sur `main` déclenche un déploiement Vercel. Ajoutez le domaine personnalisé dans les paramètres du projet Vercel et configurez les enregistrements DNS indiqués par Vercel. `public/sitemap.xml` est copié dans `dist/sitemap.xml` et référencé dans `robots.txt`; il contient les URL canoniques du domaine `www`.
 
 ## Déploiement GitHub Pages (copie secondaire)
 
@@ -81,7 +81,7 @@ Le workflow `.github/workflows/deploy.yml` publie également une copie sur GitHu
 5. Dans les paramètres du projet, ajoutez le domaine personnalisé puis suivez les indications DNS Cloudflare. Vérifiez l’émission HTTPS.
 6. Le fichier `404.html` est copié à la racine de `dist` par Vite.
 
-Aucun Worker ni Pages Function n’est requis. Après confirmation du domaine, créez le sitemap avec l’URL canonique réelle et référencez-le dans `robots.txt`; aucun domaine n’a été inventé dans ce projet.
+Aucun Worker ni Pages Function n’est requis. Le sitemap et la référence dans `robots.txt` sont également inclus dans le dossier `dist` publié par Cloudflare Pages.
 
 ## Déploiement Firebase Hosting (facultatif)
 
