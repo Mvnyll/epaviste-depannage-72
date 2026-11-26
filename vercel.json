@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/epaviste-le-mans",
+      "destination": "/epaviste-le-mans/index.html"
+    }
+  ]
+}

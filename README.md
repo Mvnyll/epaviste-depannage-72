@@ -24,6 +24,7 @@ npm run preview
 ## Organisation
 
 - `index.html` : sections et navigation de la page.
+- `epaviste-le-mans/index.html` : page locale statique, publiée à `/epaviste-le-mans`.
 - `src/js/config.js` : nom, coordonnées facultatives, SEO et texte de présentation.
 - `src/js/data/centers.js` : données géographiques centralisées; `serviceAreas` contient les 54 villes couvertes et `centers` ne contient que les implantations physiques confirmées.
 - `src/js/data/services.js` et `gallery.js` : contenu des prestations et photos de l’entreprise.
@@ -62,7 +63,7 @@ Le site est statique : il n’a ni formulaire, ni espace utilisateur, ni base de
 
 Le dépôt GitHub est la source du projet; Vercel construit et héberge le site. Importez le dépôt `Mvnyll/epaviste-depannage-72` dans Vercel et choisissez `main` comme branche de production.
 
-Vercel détecte Vite. La configuration attendue est la racine `./`, la commande de build `npm run build` et le répertoire de sortie `dist`. Chaque push sur `main` déclenche un déploiement Vercel. Ajoutez le domaine personnalisé dans les paramètres du projet Vercel et configurez les enregistrements DNS indiqués par Vercel. `public/sitemap.xml` est copié dans `dist/sitemap.xml` et référencé dans `robots.txt`; il contient les URL canoniques du domaine `www`.
+Vercel détecte Vite. La configuration attendue est la racine `./`, la commande de build `npm run build` et le répertoire de sortie `dist`. `vercel.json` réécrit `/epaviste-le-mans` vers son fichier HTML statique compilé. Chaque push sur `main` déclenche un déploiement Vercel. Ajoutez le domaine personnalisé dans les paramètres du projet Vercel et configurez les enregistrements DNS indiqués par Vercel. `public/sitemap.xml` est copié dans `dist/sitemap.xml` et référencé dans `robots.txt`; il contient les URL canoniques du domaine `www`, dont la page `/epaviste-le-mans`.
 
 ## Déploiement GitHub Pages (copie secondaire)
 

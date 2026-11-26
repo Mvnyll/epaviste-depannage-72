@@ -11,6 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: resolve(projectRoot, "index.html"),
+        leMans: resolve(projectRoot, "epaviste-le-mans/index.html"),
         notFound: resolve(projectRoot, "404.html"),
         legal: resolve(projectRoot, "mentions-legales.html"),
         privacy: resolve(projectRoot, "politique-confidentialite.html"),

@@ -61,11 +61,12 @@ for (const file of collectJavaScript("src/js")) {
   assert.equal(result.status, 0, `${file}: ${result.stderr || result.stdout}`);
 }
 
-for (const page of ["index.html", "404.html", "mentions-legales.html", "politique-confidentialite.html"]) {
+for (const page of ["index.html", "epaviste-le-mans/index.html", "404.html", "mentions-legales.html", "politique-confidentialite.html"]) {
   const html = readFileSync(page, "utf8");
   assert.match(html, /http-equiv="Content-Security-Policy"/, `${page} must declare a Content Security Policy.`);
   assert.doesNotMatch(html, /\son[a-z]+\s*=/i, `${page} must not use inline event handlers.`);
   assert.doesNotMatch(html, /\sstyle\s*=/i, `${page} must not use inline styles.`);
+  assert.equal([...html.matchAll(/<h1\b/g)].length, 1, `${page} must have exactly one H1.`);
 }
 
 const hostingHeaders = JSON.parse(readFileSync("firebase.json", "utf8")).hosting.headers;
@@ -79,6 +80,28 @@ assert.match(homePage, /src="\/src\/js\/main\.js"/, "The home page must load the
 assert.match(homePage, /href="\/src\/css\/main\.css"/, "The home page must load the source stylesheet.");
 assert.match(homePage, /logo-epaviste\.png/, "The home page must reference the supplied logo.");
 assert.match(homePage, /<iframe\b[^>]*src="https:\/\/www\.google\.com\/maps\?[^"]+output=embed"/i, "The contact section must embed the Google Maps location.");
+assert.match(homePage, /href="\/epaviste-le-mans"/, "The home page must link to the Le Mans landing page.");
+assert.match(homePage, /<link rel="canonical" href="https:\/\/www\.epavisteexpresssarthe\.fr\/" \/>/);
+
+const leMansPage = readFileSync("epaviste-le-mans/index.html", "utf8");
+assert.match(leMansPage, /<title>Épaviste Le Mans \(72\) \| Enlèvement d’épaves gratuit<\/title>/);
+assert.match(leMansPage, /name="description" content="Épaviste au Mans : enlèvement d'épaves, rachat de véhicules et dépannage automobile dans la Sarthe\./);
+assert.match(leMansPage, /rel="canonical" href="https:\/\/www\.epavisteexpresssarthe\.fr\/epaviste-le-mans"/);
+assert.equal([...leMansPage.matchAll(/<h1\b/g)].length, 1, "The Le Mans page must have exactly one H1.");
+assert.doesNotMatch(leMansPage, /Chapelle-Saint-Aubin/i, "Do not claim service in an unlisted commune.");
+for (const city of ["Le Mans", "Allonnes", "Coulaines", "Arnage", "Changé", "Yvré-l’Évêque"]) {
+  assert.ok(serviceAreas.some((area) => area.city === city), `${city} must be present in confirmed service areas.`);
+  assert.ok(leMansPage.includes(city), `${city} must be present on the Le Mans page.`);
+}
+const structuredData = leMansPage.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+assert.ok(structuredData, "The Le Mans page must expose structured data.");
+assert.equal(JSON.parse(structuredData[1]).mainEntity.provider["@id"], "https://www.epavisteexpresssarthe.fr/#business");
+
+const sitemap = readFileSync("public/sitemap.xml", "utf8");
+assert.match(sitemap, /<loc>https:\/\/www\.epavisteexpresssarthe\.fr\/epaviste-le-mans<\/loc>/, "The sitemap must include the Le Mans landing page.");
+assert.match(readFileSync("public/robots.txt", "utf8"), /Sitemap: https:\/\/www\.epavisteexpresssarthe\.fr\/sitemap\.xml/);
+const vercelConfig = JSON.parse(readFileSync("vercel.json", "utf8"));
+assert.ok(vercelConfig.rewrites.some((rewrite) => rewrite.source === "/epaviste-le-mans" && rewrite.destination === "/epaviste-le-mans/index.html"), "Vercel must map the exact Le Mans URL to its static page.");
 
 const privacyPage = readFileSync("politique-confidentialite.html", "utf8");
 assert.match(privacyPage, /ni formulaire, ni compte utilisateur.*ni base de données/s, "Privacy information must reflect the static site without visitor forms or a database.");
